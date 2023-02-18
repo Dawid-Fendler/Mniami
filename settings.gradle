@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Mniami"
 include ':app'
+include ':common'
+include ':common:ui'
