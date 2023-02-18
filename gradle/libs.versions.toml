@@ -102,10 +102,3 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 # DataStore
 data-store = { module = "androidx.datastore:datastore-preferences", version.ref = "data-store" }
-
-[plugins]
-android = { id = "com.android.application", version.ref = "gradle-plugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
-android-library = { id = "com.android.library", version.ref = "gradle-plugin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }

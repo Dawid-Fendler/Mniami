@@ -16,3 +16,5 @@ rootProject.name = "Mniami"
 include ':app'
 include ':common'
 include ':common:ui'
+include ':core'
+include ':core:preferences'
