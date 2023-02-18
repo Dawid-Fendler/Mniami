@@ -29,4 +29,10 @@
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
     </style>
+
+    <style name="Theme.Mniami.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FBFCFF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Mniami</item>
+    </style>
 </resources>
