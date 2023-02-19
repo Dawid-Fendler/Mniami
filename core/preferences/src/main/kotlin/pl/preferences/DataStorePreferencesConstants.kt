@@ -1,4 +1,3 @@
 package pl.preferences
 
-object DataStorePreferencesConstants {
-}
+object DataStorePreferencesConstants

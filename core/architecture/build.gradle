@@ -1,0 +1,17 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.architecture'
+    compileSdk 33
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+}

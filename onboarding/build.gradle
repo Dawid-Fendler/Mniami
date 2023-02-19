@@ -1,0 +1,23 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.onboarding'
+    compileSdk 33
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation project(':common:ui')
+    implementation project(':core:architecture')
+
+    implementation libs.androidx.appcompat
+    implementation libs.dots.indicator
+    implementation libs.androidx.fragment
+    implementation libs.android.material
+}

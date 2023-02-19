@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="first_onboarding_item_title">Welcome</string>
+    <string name="first_onboarding_item_description">The Mniami application will allow you to improve your culinary skills and learn many new recipes.</string>
+    <string name="second_onboarding_item_title">Prepare</string>
+    <string name="second_onboarding_item_description">You will get access not only to the recipe, but also to the list of ingredients and recommended wines.</string>
+    <string name="third_onboarding_item_title">Taste</string>
+    <string name="third_onboarding_item_description">You will be able to surprise your friends with new taste sensations.</string>
+    <string name="finish_button_title">Finish</string>
+</resources>
