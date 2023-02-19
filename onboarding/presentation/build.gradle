@@ -1,10 +1,12 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
-    namespace 'com.example.onboarding'
+    namespace 'com.example.presentation'
     compileSdk 33
 
     buildFeatures {
@@ -15,9 +17,12 @@ android {
 dependencies {
     implementation project(':common:ui')
     implementation project(':core:architecture')
+    implementation project(':onboarding:domain')
 
     implementation libs.androidx.appcompat
     implementation libs.dots.indicator
     implementation libs.androidx.fragment
     implementation libs.android.material
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 }

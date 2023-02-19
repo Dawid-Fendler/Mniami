@@ -30,7 +30,7 @@ android {
 
 dependencies {
     implementation project(':common:ui')
-    implementation project(':onboarding')
+    implementation project(':onboarding:presentation')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.splash.screen
