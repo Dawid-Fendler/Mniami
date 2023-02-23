@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.example.navigation'
+    compileSdk 33
+}
+
+dependencies {
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+}

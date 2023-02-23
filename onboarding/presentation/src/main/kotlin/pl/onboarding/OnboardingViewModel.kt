@@ -3,19 +3,21 @@ package pl.onboarding
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import pl.domain.usecase.GetOnboardingDisplayedUseCase
+import pl.domain.usecase.SaveOnboardingDisplayedUseCase
 import javax.inject.Inject
 
+@HiltViewModel
 class OnboardingViewModel @Inject constructor(
     private val getOnboardingDisplayedUseCase: GetOnboardingDisplayedUseCase,
-    private val saveOnboardingDisplayedUseCase: GetOnboardingDisplayedUseCase
-): ViewModel() {
+    private val saveOnboardingDisplayedUseCase: SaveOnboardingDisplayedUseCase
+) : ViewModel() {
 
-    private val _onboardingDisplayed: MutableLiveData<Flow<Boolean>> = MutableLiveData()
-    val onboardingDisplayedUseCase = _onboardingDisplayed
+    private val _onboardingDisplayed: MutableLiveData<Boolean> = MutableLiveData()
+    val onboardingDisplayed = _onboardingDisplayed
 
     fun saveOnboardingDisplayed() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -25,7 +27,9 @@ class OnboardingViewModel @Inject constructor(
 
     fun getOnboardingDisplayed() {
         viewModelScope.launch(Dispatchers.IO) {
-            _onboardingDisplayed.value = getOnboardingDisplayedUseCase.invoke()
+            getOnboardingDisplayedUseCase.invoke().collect {
+                _onboardingDisplayed.postValue(it)
+            }
         }
     }
 }

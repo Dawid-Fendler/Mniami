@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -30,7 +32,9 @@ android {
 
 dependencies {
     implementation project(':common:ui')
+    implementation project(':core:navigation')
     implementation project(':onboarding:presentation')
+    implementation project(':login')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.splash.screen
@@ -38,4 +42,6 @@ dependencies {
     implementation libs.android.material
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 }

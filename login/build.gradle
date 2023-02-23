@@ -6,27 +6,23 @@ plugins {
 }
 
 android {
-    namespace 'com.example.presentation'
+    namespace 'com.example.login'
     compileSdk 33
-
     buildFeatures {
         dataBinding true
     }
+
 }
 
 dependencies {
     implementation project(':common:ui')
     implementation project(':core:architecture')
     implementation project(':onboarding:domain')
-    implementation project(':onboarding:data')
 
     implementation libs.androidx.appcompat
     implementation libs.dots.indicator
     implementation libs.androidx.fragment
-    implementation libs.androidx.lifecycle.runtime.ktx
     implementation libs.android.material
-    implementation libs.androidx.navigation.fragment
-    implementation libs.androidx.navigation.ui
     implementation libs.hilt.android
     kapt libs.hilt.compiler
 }
