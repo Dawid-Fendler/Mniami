@@ -22,7 +22,6 @@ class OnboardingViewPagerFragment :
         initViewPager()
         initFinishButton()
         setListeners()
-
     }
 
     private fun initViewPager() {

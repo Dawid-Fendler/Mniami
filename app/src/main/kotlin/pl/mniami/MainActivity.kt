@@ -45,13 +45,16 @@ class MainActivity : AppCompatActivity() {
                 if (isDisplayedOnboarding) {
                     changeStartDestination(
                         popUpToDestination = R.id.onboardingViewPagerFragment,
-                        action = R.id.action_onboardingViewPagerFragment_to_loginFragment
+                        action = R.id.action_onboardingViewPagerFragment_to_authenticationFragment
                     )
                 }
                 hideOrShowActionBarBaseOnDestination(
                     hide = { supportActionBar?.hide() },
                     show = { supportActionBar?.show() },
-                    destinationId = R.id.onboardingViewPagerFragment
+                    destinationsId = listOf(
+                        R.id.onboardingViewPagerFragment,
+                        R.id.authenticationFragment
+                    )
                 )
             }
         }

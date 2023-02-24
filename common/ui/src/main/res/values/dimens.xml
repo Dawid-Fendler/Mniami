@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  Text Size  -->
+    <dimen name="sp_16">16sp</dimen>
     <dimen name="sp_22">22sp</dimen>
     <dimen name="sp_28">28sp</dimen>
 
     <!--  Margin  -->
     <dimen name="dp_2">2dp</dimen>
     <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_32">32dp</dimen>
+    <dimen name="dp_48">48dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_64">64dp</dimen>
 </resources>

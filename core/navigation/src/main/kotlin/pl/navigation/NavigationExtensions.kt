@@ -18,10 +18,10 @@ fun NavController.changeStartDestination(
 fun NavController.hideOrShowActionBarBaseOnDestination(
     hide: () -> Unit,
     show: () -> Unit,
-    destinationId: Int
+    destinationsId: List<Int>
 ) {
     addOnDestinationChangedListener { _, destination, _ ->
-        if (destination.id == destinationId) {
+        if (destinationsId.contains(destination.id)) {
             hide()
         } else {
             show()
