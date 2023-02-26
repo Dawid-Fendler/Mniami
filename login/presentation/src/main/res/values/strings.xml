@@ -2,4 +2,13 @@
 <resources>
     <string name="login_button_title">Login</string>
     <string name="sign_up_button_title">Sign up</string>
+    <string name="create_account_text_">Create Account</string>
+    <string name="to_get_started_now_text">to get started now!</string>
+    <string name="login_input_edit_text_hint">Login</string>
+    <string name="password_input_edit_text_hint">Password</string>
+    <string name="confirm_password_input_edit_text_hint">Confirm Password</string>
+    <string name="or_sign_up_with_text">Or Sign Up with</string>
+    <string name="sign_in_with_google">Sign In With Google</string>
+    <string name="already_have_an_account_text">Already have an account?</string>
+    <string name="login_now_text">Login Now</string>
 </resources>

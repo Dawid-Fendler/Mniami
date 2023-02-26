@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id "androidx.navigation.safeargs.kotlin"
 }
 
 android {
@@ -11,7 +12,6 @@ android {
     buildFeatures {
         dataBinding true
     }
-
 }
 
 dependencies {
@@ -21,6 +21,8 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment
     implementation libs.android.material
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
     implementation libs.hilt.android
     kapt libs.hilt.compiler
 }
