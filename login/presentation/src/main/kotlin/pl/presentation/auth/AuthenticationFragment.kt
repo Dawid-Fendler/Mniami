@@ -21,5 +21,10 @@ class AuthenticationFragment :
                 AuthenticationFragmentDirections.actionAuthenticationFragmentToSignUpFragment()
             )
         }
+        binding.loginButton.setOnClickListener {
+            findNavController().navigate(
+                AuthenticationFragmentDirections.actionAuthenticationFragmentToLoginFragment()
+            )
+        }
     }
 }

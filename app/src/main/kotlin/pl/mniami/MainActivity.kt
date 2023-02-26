@@ -54,7 +54,8 @@ class MainActivity : AppCompatActivity() {
                     destinationsId = listOf(
                         R.id.onboardingViewPagerFragment,
                         pl.login.presentation.R.id.authenticationFragment,
-                        pl.login.presentation.R.id.signUpFragment
+                        pl.login.presentation.R.id.signUpFragment,
+                        pl.login.presentation.R.id.loginFragment
                     )
                 )
             }

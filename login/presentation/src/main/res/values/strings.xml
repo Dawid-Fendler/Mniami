@@ -11,4 +11,9 @@
     <string name="sign_in_with_google">Sign In With Google</string>
     <string name="already_have_an_account_text">Already have an account?</string>
     <string name="login_now_text">Login Now</string>
+    <string name="welcome_text">Welcome</string>
+    <string name="glad_to_see_you_text">Glad to see you!</string>
+    <string name="or_login_with_text">Or Login with</string>
+    <string name="dont_have_an_account_text">Don\'t have an account</string>
+    <string name="sign_up_now_text">Sign Up Now</string>
 </resources>
