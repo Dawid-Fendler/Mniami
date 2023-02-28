@@ -48,6 +48,8 @@ room = "2.4.3"
 data-store = "1.0.0"
 # Dots indicator
 dots-indicator = "4.3"
+# Firebase
+firebase = "21.0.3"
 
 [libraries]
 # Define the libraries
@@ -106,3 +108,5 @@ room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 data-store = { module = "androidx.datastore:datastore-preferences", version.ref = "data-store" }
 # Dots indicator
 dots-indicator = { module = "com.tbuonomo:dotsindicator", version.ref = "dots-indicator" }
+# Firebase
+firebase = { module = "com.google.firebase:firebase-auth", version.ref = "firebase" }

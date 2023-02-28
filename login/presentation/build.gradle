@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id "androidx.navigation.safeargs.kotlin"
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -17,9 +18,12 @@ android {
 dependencies {
     implementation project(':common:ui')
     implementation project(':core:architecture')
+    implementation project(':login:data')
+    implementation project(':login:domain')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment
+    implementation libs.firebase
     implementation libs.android.material
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui

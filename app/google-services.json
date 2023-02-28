@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "254714625233",
+    "project_id": "mniami-d29a5",
+    "storage_bucket": "mniami-d29a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254714625233:android:44bc9f31f0627a29a399f0",
+        "android_client_info": {
+          "package_name": "pl.mniami"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254714625233-gqgab3rbj8a0eu6obeh3pgr6rf5ljgkh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCryqMA7FWVVGyURSeCNWpoP7dZUIgNf1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254714625233-gqgab3rbj8a0eu6obeh3pgr6rf5ljgkh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
