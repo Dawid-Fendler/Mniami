@@ -18,6 +18,7 @@ android {
 dependencies {
     implementation project(':common:ui')
     implementation project(':core:architecture')
+    implementation project(':core:networking')
     implementation project(':login:data')
     implementation project(':login:domain')
 

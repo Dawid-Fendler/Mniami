@@ -3,10 +3,12 @@ package pl.presentation.auth
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
 import pl.login.presentation.R
 import pl.login.presentation.databinding.FragmentAuthenticationBinding
 
+@AndroidEntryPoint
 class AuthenticationFragment :
     BaseFragment<FragmentAuthenticationBinding>(R.layout.fragment_authentication) {
 

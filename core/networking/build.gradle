@@ -1,0 +1,15 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.networking'
+    compileSdk 33
+}
+
+dependencies {
+    implementation libs.firebase
+    implementation libs.coroutines
+}

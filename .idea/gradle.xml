@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/architecture" />
             <option value="$PROJECT_DIR$/core/navigation" />
+            <option value="$PROJECT_DIR$/core/networking" />
             <option value="$PROJECT_DIR$/core/preferences" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/login/data" />

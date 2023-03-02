@@ -12,8 +12,11 @@ android {
 }
 
 dependencies {
+    implementation project(':core:networking')
     implementation project(':login:domain')
+
     implementation libs.firebase
     implementation libs.hilt.android
+    implementation libs.timber
     kapt libs.hilt.compiler
 }

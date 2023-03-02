@@ -12,6 +12,8 @@ android {
 }
 
 dependencies {
+    implementation project(':core:networking')
+
     implementation libs.firebase
     implementation libs.hilt.android
     kapt libs.hilt.compiler
