@@ -1,25 +1,27 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'com.google.gms.google-services'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
 }
 
 android {
-    namespace 'com.example.networking'
+    namespace 'pl.data'
     compileSdk 33
+
 }
 
 dependencies {
-    implementation libs.firebase
-    implementation libs.coroutines
+    implementation project(':core:networking')
+    implementation project(':core:preferences')
+    implementation project(':domain')
+
     implementation libs.hilt.android
-    implementation libs.moshi
-    implementation libs.okhttp
-    implementation libs.okhttp.login
-    implementation libs.retrofit.moshi
+    implementation libs.data.store
     implementation libs.retrofit
+    implementation libs.moshi
+    implementation libs.firebase
     implementation libs.timber
     kapt libs.hilt.compiler
 }

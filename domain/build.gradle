@@ -1,0 +1,23 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'pl.domain'
+    compileSdk 33
+}
+
+dependencies {
+    implementation project(':core:networking')
+
+    implementation libs.hilt.android
+    implementation libs.room.runtime
+    kapt libs.room.compiler
+    implementation libs.firebase
+    implementation libs.room.ktx
+    kapt libs.hilt.compiler
+}

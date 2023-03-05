@@ -34,8 +34,8 @@ android {
 dependencies {
     implementation project(':common:ui')
     implementation project(':core:navigation')
-    implementation project(':onboarding:presentation')
-    implementation project(':login:presentation')
+    implementation project(':presentation:onboarding')
+    implementation project(':presentation:login')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.splash.screen

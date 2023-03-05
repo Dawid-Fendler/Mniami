@@ -10,6 +10,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import dagger.hilt.android.AndroidEntryPoint
+import pl.login.R.id.authenticationFragment
+import pl.login.R.id.loginFragment
+import pl.login.R.id.signUpFragment
 import pl.mniami.databinding.ActivityMainBinding
 import pl.navigation.changeStartDestination
 import pl.navigation.hideOrShowActionBarBaseOnDestination
@@ -53,9 +56,9 @@ class MainActivity : AppCompatActivity() {
                     show = { supportActionBar?.show() },
                     destinationsId = listOf(
                         R.id.onboardingViewPagerFragment,
-                        pl.login.presentation.R.id.authenticationFragment,
-                        pl.login.presentation.R.id.signUpFragment,
-                        pl.login.presentation.R.id.loginFragment
+                        authenticationFragment,
+                        signUpFragment,
+                        loginFragment
                     )
                 )
             }

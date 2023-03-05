@@ -14,7 +14,7 @@ private val Context.dataStore by preferencesDataStore(
     name = "user_preferences"
 )
 
-class DataStorePreferencesImpl(
+internal class DataStorePreferencesImpl(
     context: Context
 ) : DataStorePreferences {
 
