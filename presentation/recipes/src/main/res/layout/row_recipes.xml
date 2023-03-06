@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="recipeInfo"
+            type="pl.domain.model.recipes.RecipeInfoUiModel" />
+    </data>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_12"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/recipe_image_view"
+                loadImageFromUrl="@{recipeInfo.recipeImage}"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_empty"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title_text_view"
+                style="@style/TitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@{recipeInfo.recipeTitle}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_image_view"
+                tools:text="Spaghetti" />
+
+            <ImageView
+                android:id="@+id/heart_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:src="@drawable/ic_heart"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/red" />
+
+            <ImageView
+                android:id="@+id/clock_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_4"
+                android:layout_marginBottom="@dimen/dp_8"
+                android:src="@drawable/ic_clock"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recipe_rating_bar" />
+
+            <TextView
+                android:id="@+id/time_to_preparation_text_view"
+                style="@style/DefaultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:text="@{recipeInfo.recipeMinutes}"
+                app:layout_constraintBottom_toBottomOf="@+id/clock_image_view"
+                app:layout_constraintStart_toEndOf="@+id/clock_image_view"
+                app:layout_constraintTop_toTopOf="@+id/clock_image_view"
+                tools:text="50 min" />
+
+            <RatingBar
+                android:id="@+id/recipe_rating_bar"
+                style="@android:style/Widget.DeviceDefault.RatingBar.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_4"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:progressTint="@color/seed"
+                android:rating="@{recipeInfo.recipeScore}"
+                android:scaleX="1"
+                android:scaleY="1"
+                android:stepSize="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+            <TextView
+                android:id="@+id/recipe_rating_text_view"
+                style="@style/DefaultTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:text="@{String.valueOf(recipeInfo.recipeScore)}"
+                app:layout_constraintBottom_toBottomOf="@+id/recipe_rating_bar"
+                app:layout_constraintStart_toEndOf="@+id/recipe_rating_bar"
+                app:layout_constraintTop_toTopOf="@+id/recipe_rating_bar"
+                tools:text="(5.0)" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,7 +1,7 @@
 package pl.data.repository
 
 import pl.data.datasource.recipes.RecipesDataSource
-import pl.data.model.recipes.toDomain
+import pl.data.mapper.recipes.toDomain
 import pl.domain.model.recipes.Recipes
 import pl.domain.repository.RecipesRepository
 import pl.networking.extensions.callWithHandler

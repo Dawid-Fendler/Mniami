@@ -23,9 +23,7 @@ class LoginViewModel @Inject constructor(
     fun login(email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
             when (loginUseCase.execute(LoginUseCase.Input(email, password))) {
-                is Resource.Success -> isLoginSuccessfully.postValue(
-                    LoginSuccessfully
-                )
+                is Resource.Success -> isLoginSuccessfully.postValue(LoginSuccessfully)
                 is Resource.Failure -> isLoginSuccessfully.postValue(LoginFailure)
             }
         }

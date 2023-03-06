@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recipes_empty_text">Not found any recipes</string>
+    <string name="recipes_refresh_screen_text">An error occurred, please swipe to refresh</string>
+</resources>

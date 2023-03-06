@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="TitleTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DefaultTextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
 </resources>

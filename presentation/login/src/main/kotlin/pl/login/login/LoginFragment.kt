@@ -29,6 +29,12 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
                 LoginFragmentDirections.actionLoginFragmentToSignUpFragment()
             )
         }
+        binding.loginButton.setOnClickListener {
+            viewModel.login(
+                binding.usernameInput.text.toString(),
+                binding.passwordInput.text.toString()
+            )
+        }
     }
 
     private fun observeIsLoginSuccessfully() {
@@ -41,7 +47,9 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
     }
 
     private fun navigateToRecipesScreen() {
-        // TODO next task
+        findNavController().navigate(
+            LoginFragmentDirections.actionLoginFragmentToRecipesGraph()
+        )
     }
 
     private fun showLoginFailureInformation() {

@@ -4,8 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.ui'
+    namespace 'pl.common.ui'
     compileSdk 33
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {

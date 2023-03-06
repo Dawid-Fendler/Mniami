@@ -1,0 +1,34 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id "androidx.navigation.safeargs.kotlin"
+}
+
+android {
+    namespace 'pl.recipes'
+    compileSdk 33
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+dependencies {
+    implementation project(':common:ui')
+    implementation project(':core:architecture')
+    implementation project(':core:coroutines')
+    implementation project(':core:networking')
+    implementation project(':data')
+    implementation project(':domain')
+
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.fragment
+    implementation libs.android.material
+    implementation libs.androidx.navigation.fragment
+    implementation libs.androidx.navigation.ui
+    implementation libs.android.swipe.refresh
+    implementation libs.coil
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+}

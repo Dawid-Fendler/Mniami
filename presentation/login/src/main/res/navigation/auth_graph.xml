@@ -21,7 +21,7 @@
         android:id="@+id/signUpFragment"
         android:name="pl.login.signup.SignUpFragment"
         android:label="SignUpFragment"
-        tools:layout="@layout/fragment_sign_up" >
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -30,9 +30,13 @@
         android:id="@+id/loginFragment"
         android:name="pl.login.login.LoginFragment"
         android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_recipes_graph"
+            app:destination="@id/recipes_graph" />
     </fragment>
+    <include app:graph="@navigation/recipes_graph" />
 </navigation>

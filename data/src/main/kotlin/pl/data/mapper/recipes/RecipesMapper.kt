@@ -1,5 +1,7 @@
-package pl.data.model.recipes
+package pl.data.mapper.recipes
 
+import pl.data.model.recipes.RecipeInfoDto
+import pl.data.model.recipes.RecipesDto
 import pl.domain.model.recipes.RecipeInfo
 import pl.domain.model.recipes.Recipes
 
