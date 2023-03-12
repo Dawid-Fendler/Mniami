@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'pl.common.validation'
+    compileSdk 33
+}
+
+dependencies {
+    kapt libs.hilt.compiler
+    implementation libs.hilt.android
+}

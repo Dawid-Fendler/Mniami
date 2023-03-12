@@ -103,19 +103,32 @@
                 tools:targetApi="cupcake" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/validation_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginHorizontal="@dimen/dp_32"
+            android:textColor="@color/md_theme_light_error"
+            android:textSize="@dimen/sp_12"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm_password_input_layout" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/registration_button"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_60"
             android:layout_marginHorizontal="@dimen/dp_32"
-            android:layout_marginTop="@dimen/dp_32"
+            android:layout_marginTop="@dimen/dp_16"
             android:text="@string/sign_up_button_title"
             android:textColor="@color/md_theme_light_onPrimary"
             android:textSize="@dimen/sp_16"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/confirm_password_input_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/validation_text" />
 
         <View
             android:id="@+id/divider_left"

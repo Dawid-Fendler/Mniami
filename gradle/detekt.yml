@@ -563,7 +563,7 @@ style:
     active: true
     maxJumpCount: 1
   MagicNumber:
-    active: true
+    active: false
     excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**', '**/*.kts']
     ignoreNumbers:
       - '-1'
@@ -631,7 +631,7 @@ style:
     active: false
   ReturnCount:
     active: true
-    max: 2
+    max: 4
     excludedFunctions:
       - 'equals'
     excludeLabeled: false

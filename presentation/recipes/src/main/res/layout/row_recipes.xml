@@ -10,7 +10,6 @@
             type="pl.domain.model.recipes.RecipeInfoUiModel" />
     </data>
 
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
