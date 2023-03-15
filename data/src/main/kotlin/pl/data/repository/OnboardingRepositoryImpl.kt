@@ -21,4 +21,10 @@ class OnboardingRepositoryImpl @Inject constructor(
             DataStorePreferencesConstants.ONBOARDING_DISPLAYED_KEY,
             false
         )
+
+    override suspend fun getIsLogged() =
+        dataStorePreferences.getPreference(
+            DataStorePreferencesConstants.IS_LOGGED_KEY,
+            false
+        )
 }

@@ -10,6 +10,7 @@ import pl.data.datasource.recipes.RecipesRemoteDataSource
 import pl.data.repository.AuthRepositoryImpl
 import pl.data.service.RecipesApi
 import pl.domain.repository.AuthRepository
+import pl.preferences.DataStorePreferences
 import javax.inject.Singleton
 
 @Module
@@ -21,8 +22,8 @@ object DataSourceModule {
 
     @Singleton
     @Provides
-    fun provideAuthRepository(auth: FirebaseAuth): AuthRepository =
-        AuthRepositoryImpl(auth)
+    fun provideAuthRepository(auth: FirebaseAuth, dataStore: DataStorePreferences): AuthRepository =
+        AuthRepositoryImpl(auth, dataStore)
 
     @Singleton
     @Provides

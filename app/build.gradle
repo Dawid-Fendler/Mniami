@@ -36,6 +36,7 @@ dependencies {
     implementation project(':core:navigation')
     implementation project(':presentation:onboarding')
     implementation project(':presentation:login')
+    implementation project(':presentation:recipes')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.splash.screen

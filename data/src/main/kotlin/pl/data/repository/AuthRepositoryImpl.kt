@@ -6,11 +6,14 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import pl.domain.repository.AuthRepository
 import pl.domain.util.Resource
 import pl.networking.extensions.await
+import pl.preferences.DataStorePreferences
+import pl.preferences.DataStorePreferencesConstants
 import timber.log.Timber
 import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(
-    private val auth: FirebaseAuth
+    private val auth: FirebaseAuth,
+    private val dataStorePreferences: DataStorePreferences
 ) : AuthRepository {
 
     @SuppressWarnings("TooGenericExceptionCaught")
@@ -43,6 +46,13 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun googleLogin(credential: AuthCredential) {
         // TODO Add handle for google Login
         auth.signInWithCredential(credential)
+    }
+
+    override suspend fun saveIsLogged() {
+        dataStorePreferences.putPreference(
+            DataStorePreferencesConstants.IS_LOGGED_KEY,
+            true
+        )
     }
 
     override suspend fun logout() {

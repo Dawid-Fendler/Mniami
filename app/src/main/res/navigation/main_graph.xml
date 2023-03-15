@@ -12,7 +12,19 @@
         tools:layout="@layout/fragment_onboarding_view_pager">
         <action
             android:id="@+id/action_onboardingViewPagerFragment_to_auth_graph"
-            app:destination="@id/auth_graph" />
+            app:destination="@id/auth_graph"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_onboardingViewPagerFragment_to_recipes_graph"
+            app:destination="@id/recipes_graph"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <include app:graph="@navigation/auth_graph" />
+    <include app:graph="@navigation/recipes_graph" />
 </navigation>

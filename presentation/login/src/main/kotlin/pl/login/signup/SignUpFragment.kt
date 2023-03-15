@@ -38,7 +38,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
         viewModel.registration(
             email = binding.usernameInput.text.toString(),
             password = binding.passwordInput.text.toString(),
-            repeatedPassword = binding.confirmPasswordInput.toString()
+            repeatedPassword = binding.confirmPasswordInput.text.toString()
         )
     }
 

@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
     private val viewModel: OnboardingViewModel by viewModels()
+    private var isLogged = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
@@ -43,13 +44,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavController() {
+        observeOnboardingDisplayed()
+    }
+
+    private fun observeOnboardingDisplayed() {
         viewModel.onboardingDisplayed.observe(this) { isDisplayedOnboarding ->
             navController = findNavController(R.id.nav_host_fragment).apply {
                 if (isDisplayedOnboarding) {
-                    changeStartDestination(
-                        popUpToDestination = R.id.onboardingViewPagerFragment,
-                        action = R.id.action_onboardingViewPagerFragment_to_auth_graph
-                    )
+                    viewModel.getIsLogged()
+                    viewModel.isLogged.observe(this@MainActivity) {
+                        if (it) {
+                            changeStartDestination(
+                                popUpToDestination = R.id.onboardingViewPagerFragment,
+                                action = R.id.action_onboardingViewPagerFragment_to_recipes_graph
+                            )
+                        } else {
+                            changeStartDestination(
+                                popUpToDestination = R.id.onboardingViewPagerFragment,
+                                action = R.id.action_onboardingViewPagerFragment_to_auth_graph
+                            )
+                        }
+                    }
                 }
                 hideOrShowActionBarBaseOnDestination(
                     hide = { supportActionBar?.hide() },

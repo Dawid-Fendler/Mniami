@@ -4,8 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import pl.coroutines.DispatcherProvider
+import pl.domain.usecase.onboarding.GetIsLoggedUseCase
 import pl.domain.usecase.onboarding.GetOnboardingDisplayedUseCase
 import pl.domain.usecase.onboarding.SaveOnboardingDisplayedUseCase
 import javax.inject.Inject
@@ -13,22 +14,35 @@ import javax.inject.Inject
 @HiltViewModel
 class OnboardingViewModel @Inject constructor(
     private val getOnboardingDisplayedUseCase: GetOnboardingDisplayedUseCase,
-    private val saveOnboardingDisplayedUseCase: SaveOnboardingDisplayedUseCase
+    private val saveOnboardingDisplayedUseCase: SaveOnboardingDisplayedUseCase,
+    private val getIsLoggedUseCase: GetIsLoggedUseCase,
+    private val dispatcher: DispatcherProvider
 ) : ViewModel() {
 
-    private val _onboardingDisplayed: MutableLiveData<Boolean> = MutableLiveData()
-    val onboardingDisplayed = _onboardingDisplayed
+    var onboardingDisplayed: MutableLiveData<Boolean> = MutableLiveData()
+        private set
+
+    var isLogged: MutableLiveData<Boolean> = MutableLiveData()
+        private set
 
     fun saveOnboardingDisplayed() {
-        viewModelScope.launch(Dispatchers.IO) {
-            saveOnboardingDisplayedUseCase.invoke()
+        viewModelScope.launch(dispatcher.io) {
+            saveOnboardingDisplayedUseCase.execute(Unit)
         }
     }
 
     fun getOnboardingDisplayed() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcher.io) {
             getOnboardingDisplayedUseCase.execute(Unit).collect {
-                _onboardingDisplayed.postValue(it)
+                onboardingDisplayed.postValue(it)
+            }
+        }
+    }
+
+    fun getIsLogged() {
+        viewModelScope.launch(dispatcher.io) {
+            getIsLoggedUseCase.execute(Unit).collect {
+                isLogged.postValue(it)
             }
         }
     }

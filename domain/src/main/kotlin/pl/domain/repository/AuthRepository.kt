@@ -7,5 +7,6 @@ interface AuthRepository {
     suspend fun login(email: String, password: String): Resource<Unit>
     suspend fun registration(email: String, password: String): Resource<Unit>
     suspend fun googleLogin(credential: AuthCredential)
+    suspend fun saveIsLogged()
     suspend fun logout()
 }
