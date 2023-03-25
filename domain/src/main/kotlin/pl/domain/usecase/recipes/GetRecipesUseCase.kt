@@ -1,6 +1,6 @@
 package pl.domain.usecase.recipes
 
-import pl.domain.model.mapper.toUiModel
+import pl.domain.mapper.toUiModel
 import pl.domain.model.recipes.RecipeInfoUiModel
 import pl.domain.repository.RecipesRepository
 import pl.domain.util.Resource

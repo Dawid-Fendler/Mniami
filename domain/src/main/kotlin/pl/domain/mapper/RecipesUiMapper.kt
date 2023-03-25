@@ -1,4 +1,4 @@
-package pl.domain.model.mapper
+package pl.domain.mapper
 
 import pl.domain.model.recipes.RecipeInfo
 import pl.domain.model.recipes.RecipeInfoUiModel

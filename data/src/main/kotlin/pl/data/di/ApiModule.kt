@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import pl.data.service.RecipeDetailsApi
 import pl.data.service.RecipesApi
 import retrofit2.Retrofit
 import javax.inject.Singleton
@@ -15,5 +16,10 @@ object ApiModule {
     @Singleton
     @Provides
     fun provideRecipesApi(retrofit: Retrofit): RecipesApi =
-        retrofit.create(pl.data.service.RecipesApi::class.java)
+        retrofit.create(RecipesApi::class.java)
+
+    @Singleton
+    @Provides
+    fun provideRecipeDetailsApi(retrofit: Retrofit): RecipeDetailsApi =
+        retrofit.create(RecipeDetailsApi::class.java)
 }

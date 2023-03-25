@@ -5,7 +5,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class RecipeDetailsViewModel @Inject constructor(
+class RRecipeDetailsViewModel @Inject constructor(
 
 ) : ViewModel() {
 }
