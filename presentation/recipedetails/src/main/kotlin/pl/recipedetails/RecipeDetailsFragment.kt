@@ -53,6 +53,8 @@ class RecipeDetailsFragment :
         initRecipeSummary(result.summary)
         initDietTypes(result.dietTypes)
         initDishTypes(result.dishTypes)
+        initMinutes(result.minutes)
+        initLikes(result.likes)
     }
 
     private fun initRecipeImage(imageUrl: String) {
@@ -87,6 +89,14 @@ class RecipeDetailsFragment :
                 }
             )
         }
+    }
+
+    private fun initMinutes(minutes: Int) {
+        binding.timeToPreparationTextView.text = minutes.toString()
+    }
+
+    private fun initLikes(likes: Int) {
+        binding.likeValueTextView.text = likes.toString()
     }
 
     private fun showRecipeDetailsLoadFailureState() {

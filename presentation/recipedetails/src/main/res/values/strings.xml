@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="diet_type_text">Diet Type</string>
-    <string name="meal_type_text">Meal Type</string>
+    <string name="meal_type_text">Dish Type</string>
 </resources>
