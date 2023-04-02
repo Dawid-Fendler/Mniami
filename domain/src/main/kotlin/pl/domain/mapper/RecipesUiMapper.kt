@@ -5,6 +5,7 @@ import pl.domain.model.recipes.RecipeInfoUiModel
 
 @SuppressWarnings("MagicNumber")
 fun RecipeInfo.toUiModel() = RecipeInfoUiModel(
+    id = recipeId,
     recipeImage = recipeImage,
     recipeTitle = recipeTitle,
     recipeMinutes = "$recipeMinutes min",

@@ -2,7 +2,10 @@ package pl.recipedetails
 
 import android.os.Bundle
 import android.view.View
+import android.widget.LinearLayout
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
@@ -15,21 +18,17 @@ import pl.recipedetails.RecipeDetailsViewState.RecipeDetailsLoaded
 import pl.ui.parseHtml
 
 @AndroidEntryPoint
+@SuppressWarnings("TooManyFunctions")
 class RecipeDetailsFragment :
     BaseFragment<FragmentRecipeDetailsBinding>(R.layout.fragment_recipe_details) {
 
     private val viewModel: RecipeDetailsViewModel by viewModels()
+    private val arguments: RecipeDetailsFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setListeners()
-
-        observeRecipeDetails(1)
-    }
-
-    private fun setListeners() {
-
+        observeRecipeDetails(arguments.id)
     }
 
     private fun observeRecipeDetails(id: Int) {
@@ -44,6 +43,7 @@ class RecipeDetailsFragment :
     }
 
     private fun showRecipeDetailsLoadedState(result: RecipeDetailsUiModel) {
+        initScreenOptions(animationViewVisible = false, rootViewVisible = true)
         initView(result)
     }
 
@@ -55,6 +55,7 @@ class RecipeDetailsFragment :
         initDishTypes(result.dishTypes)
         initMinutes(result.minutes)
         initLikes(result.likes)
+        initHealthScore(result.healthScore)
     }
 
     private fun initRecipeImage(imageUrl: String) {
@@ -72,20 +73,32 @@ class RecipeDetailsFragment :
     }
 
     private fun initDietTypes(dietTypes: List<String>) {
+        val ll: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        ll.setMargins(8, 0, 0, 0)
         dietTypes.forEach { dietTypeName ->
             binding.dietTypeContainer.addView(
                 ChipView(requireContext()).apply {
                     chipText = dietTypeName
+                    layoutParams = ll
                 }
             )
         }
     }
 
     private fun initDishTypes(dishTypes: List<String>) {
+        val ll: LinearLayout.LayoutParams = LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.WRAP_CONTENT,
+            LinearLayout.LayoutParams.WRAP_CONTENT
+        )
+        ll.setMargins(8, 0, 0, 0)
         dishTypes.forEach { dishTypeName ->
             binding.mealTypeContainer.addView(
                 ChipView(requireContext()).apply {
                     chipText = dishTypeName
+                    layoutParams = ll
                 }
             )
         }
@@ -99,11 +112,25 @@ class RecipeDetailsFragment :
         binding.likeValueTextView.text = likes.toString()
     }
 
-    private fun showRecipeDetailsLoadFailureState() {
+    private fun initHealthScore(score: Float) {
+        binding.recipeRatingTextView.text = score.toString()
+    }
 
+    private fun showRecipeDetailsLoadFailureState() {
+        initScreenOptions(animationViewVisible = false, rootViewVisible = false)
     }
 
     private fun showLoadingState() {
+        initScreenOptions()
+    }
 
+    private fun initScreenOptions(
+        animationViewVisible: Boolean = true,
+        rootViewVisible: Boolean = false
+    ) {
+        with(binding) {
+            animationView.isVisible = animationViewVisible
+            scrollView.isVisible = rootViewVisible
+        }
     }
 }

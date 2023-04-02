@@ -20,6 +20,7 @@ dependencies {
     implementation project(':core:coroutines')
     implementation project(':data')
     implementation project(':domain')
+    implementation project(':presentation:recipedetails')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment

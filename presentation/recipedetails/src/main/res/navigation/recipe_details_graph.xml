@@ -9,5 +9,9 @@
         android:id="@+id/recipeDetailsFragment"
         android:name="pl.recipedetails.RecipeDetailsFragment"
         android:label="RecipeDetailsFragment"
-        tools:layout="@layout/fragment_recipe_details"/>
+        tools:layout="@layout/fragment_recipe_details">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

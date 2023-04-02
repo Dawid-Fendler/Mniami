@@ -20,7 +20,8 @@ fun RecipeDetailsDto.toDomain() = RecipeDetails(
     dishTypes = dishTypes,
     summary = summary,
     winePairing = winePairing.toDomain(),
-    ingredients = extendedIngredients.map { it.toDomain() }
+    ingredients = extendedIngredients.map { it.toDomain() },
+    healthScore = healthScore
 )
 
 fun WinePairingDto.toDomain() = WinePairing(

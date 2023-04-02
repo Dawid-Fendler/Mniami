@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_8"
+        navigateToDetails="@{recipeInfo.id}"
         android:layout_marginBottom="@dimen/dp_8"
         app:cardCornerRadius="@dimen/dp_12"
         app:strokeWidth="1dp">

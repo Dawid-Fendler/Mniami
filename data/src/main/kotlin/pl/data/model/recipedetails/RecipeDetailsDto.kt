@@ -13,5 +13,6 @@ data class RecipeDetailsDto(
     val dishTypes: List<String>,
     val summary: String,
     val winePairing: WinePairingDto,
-    val extendedIngredients: List<ExtendedIngredientDto>
+    val extendedIngredients: List<ExtendedIngredientDto>,
+    val healthScore: Double
 )

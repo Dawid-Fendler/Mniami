@@ -5,5 +5,5 @@ data class ExtendedIngredientDto(
     val image: String,
     val name: String,
     val unit: String,
-    val amount: Double,
+    val amount: Double
 )
