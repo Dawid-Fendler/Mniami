@@ -2,4 +2,6 @@
 <resources>
     <string name="diet_type_text">Diet Type</string>
     <string name="meal_type_text">Dish Type</string>
+    <string name="wines">Wines</string>
+    <string name="wines_button">Wines</string>
 </resources>

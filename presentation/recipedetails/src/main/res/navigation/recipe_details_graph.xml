@@ -13,5 +13,17 @@
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_winesDialogFragment"
+            app:destination="@id/winesDialogFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/winesDialogFragment"
+        android:name="pl.recipedetails.WinesDialogFragment"
+        android:label="WinesDialogFragment"
+        tools:layout="@layout/dialog_fragment_wines">
+        <argument
+            android:name="wines"
+            app:argType="pl.domain.model.recipedetails.WinePairingUiModel" />
+    </dialog>
 </navigation>

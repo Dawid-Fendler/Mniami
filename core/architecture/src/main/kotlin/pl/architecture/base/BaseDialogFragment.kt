@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.DialogFragment
 
-abstract class BaseFragment<T : ViewDataBinding>(
+abstract class BaseDialogFragment<VB : ViewDataBinding>(
     @LayoutRes private val layoutResId: Int
-) : Fragment() {
+) :
+    DialogFragment() {
 
-    private var _binding: T? = null
+    private var _binding: VB? = null
     val binding get() = _binding!!
 
     override fun onCreateView(
@@ -26,7 +27,7 @@ abstract class BaseFragment<T : ViewDataBinding>(
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
     }
 }

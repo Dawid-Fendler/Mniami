@@ -5,11 +5,13 @@ import android.view.View
 import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
 import pl.domain.model.recipedetails.RecipeDetailsUiModel
+import pl.domain.model.recipedetails.WinePairingUiModel
 import pl.presentation.recipedetails.R
 import pl.presentation.recipedetails.databinding.FragmentRecipeDetailsBinding
 import pl.recipedetails.RecipeDetailsViewState.Loading
@@ -56,6 +58,7 @@ class RecipeDetailsFragment :
         initMinutes(result.minutes)
         initLikes(result.likes)
         initHealthScore(result.healthScore)
+        initWinesButton(result.winePairing)
     }
 
     private fun initRecipeImage(imageUrl: String) {
@@ -114,6 +117,16 @@ class RecipeDetailsFragment :
 
     private fun initHealthScore(score: Float) {
         binding.recipeRatingTextView.text = score.toString()
+    }
+
+    private fun initWinesButton(wines: WinePairingUiModel) {
+        binding.openWinesScreenButton.setOnClickListener {
+            findNavController().navigate(
+                RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToWinesDialogFragment(
+                    wines
+                )
+            )
+        }
     }
 
     private fun showRecipeDetailsLoadFailureState() {
