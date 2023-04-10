@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import coil.load
 import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
+import pl.domain.model.recipedetails.ExtendedIngredientUiModel
 import pl.domain.model.recipedetails.RecipeDetailsUiModel
 import pl.domain.model.recipedetails.WinePairingUiModel
 import pl.presentation.recipedetails.R
@@ -59,6 +60,7 @@ class RecipeDetailsFragment :
         initLikes(result.likes)
         initHealthScore(result.healthScore)
         initWinesButton(result.winePairing)
+        initIngredientsButton(result.ingredients)
     }
 
     private fun initRecipeImage(imageUrl: String) {
@@ -124,6 +126,16 @@ class RecipeDetailsFragment :
             findNavController().navigate(
                 RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToWinesDialogFragment(
                     wines
+                )
+            )
+        }
+    }
+
+    private fun initIngredientsButton(ingredients: List<ExtendedIngredientUiModel>) {
+        binding.openIngredientsScreenButton.setOnClickListener {
+            findNavController().navigate(
+                RecipeDetailsFragmentDirections.actionRecipeDetailsFragmentToIngredientsGraph(
+                    ingredients.toTypedArray()
                 )
             )
         }

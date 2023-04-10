@@ -16,6 +16,13 @@
         <action
             android:id="@+id/action_recipeDetailsFragment_to_winesDialogFragment"
             app:destination="@id/winesDialogFragment" />
+        <action
+            android:id="@+id/action_recipeDetailsFragment_to_ingredients_graph"
+            app:destination="@id/ingredients_graph">
+            <argument
+                android:name="ingredients"
+                app:argType="pl.domain.model.recipedetails.ExtendedIngredientUiModel[]" />
+        </action>
     </fragment>
     <dialog
         android:id="@+id/winesDialogFragment"
@@ -26,4 +33,5 @@
             android:name="wines"
             app:argType="pl.domain.model.recipedetails.WinePairingUiModel" />
     </dialog>
+    <include app:graph="@navigation/ingredients_graph" />
 </navigation>

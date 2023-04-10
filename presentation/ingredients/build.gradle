@@ -7,8 +7,9 @@ plugins {
 }
 
 android {
-    namespace 'pl.presentation.recipedetails'
+    namespace 'pl.presentation.ingredients'
     compileSdk 33
+
     buildFeatures {
         dataBinding true
         viewBinding true
@@ -21,14 +22,13 @@ dependencies {
     implementation project(':core:coroutines')
     implementation project(':data')
     implementation project(':domain')
-    implementation project(':presentation:ingredients')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment
     implementation libs.android.material
     implementation libs.androidx.navigation.fragment
     implementation libs.androidx.navigation.ui
-    implementation libs.lottie
+    implementation libs.android.swipe.refresh
     implementation libs.coil
     implementation libs.hilt.android
     kapt libs.hilt.compiler

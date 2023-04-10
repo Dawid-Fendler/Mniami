@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="ingredients"
+            type="pl.domain.model.recipedetails.ExtendedIngredientUiModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        navigateToDetails="@{ingredients.id}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        app:cardCornerRadius="@dimen/dp_12"
+        app:strokeWidth="1dp">
+
+        <ImageView
+            loadImageFromUrl="@{ingredients.image}"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:scaleType="centerCrop" />
+    </com.google.android.material.card.MaterialCardView>
+</layout>

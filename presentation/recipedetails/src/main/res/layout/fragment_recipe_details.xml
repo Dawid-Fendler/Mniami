@@ -231,13 +231,27 @@
                     style="@style/Widget.Material3.Button"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/dp_12"
                     android:layout_marginVertical="@dimen/dp_20"
+                    android:layout_marginStart="@dimen/dp_12"
                     android:text="@string/wines_button"
                     android:textSize="@dimen/sp_14"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/meal_type_root" />
+
+                <Button
+                    android:id="@+id/open_ingredients_screen_button"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    android:text="@string/ingredients_button"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/meal_type_root" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,8 +56,5 @@ private fun createDietTypesList(
 
 fun ExtendedIngredient.toUiModel() = ExtendedIngredientUiModel(
     id = id,
-    image = image,
-    name = name,
-    unit = unit,
-    amount = amount
+    image = image
 )

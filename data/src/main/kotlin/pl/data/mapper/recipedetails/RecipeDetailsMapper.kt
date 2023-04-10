@@ -30,8 +30,5 @@ fun WinePairingDto.toDomain() = WinePairing(
 
 fun ExtendedIngredientDto.toDomain() = ExtendedIngredient(
     id = id,
-    image = image,
-    name = name,
-    unit = unit,
-    amount = amount
+    image = image
 )

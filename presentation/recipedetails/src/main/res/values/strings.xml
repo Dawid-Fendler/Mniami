@@ -4,4 +4,5 @@
     <string name="meal_type_text">Dish Type</string>
     <string name="wines">Wines</string>
     <string name="wines_button">Wines</string>
+    <string name="ingredients_button">Ingredients</string>
 </resources>
