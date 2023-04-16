@@ -7,4 +7,5 @@ sealed class IngredientDetailsViewState {
         IngredientDetailsViewState()
 
     data class IngredientDetailsLoadFailure(val message: String) : IngredientDetailsViewState()
+    object Loading : IngredientDetailsViewState()
 }

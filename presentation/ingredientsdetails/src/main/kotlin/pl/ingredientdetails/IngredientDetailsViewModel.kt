@@ -11,8 +11,6 @@ import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 import pl.coroutines.DispatcherProvider
 import pl.domain.mapper.mapToUiModel
-import pl.domain.model.ingredientdetails.IngredientDetails
-import pl.domain.model.ingredientdetails.IngredientSubstitutes
 import pl.domain.usecase.ingredientdetails.GetIngredientDetailsUseCase
 import pl.domain.usecase.ingredientdetails.GetIngredientSubstitutesUseCase
 import pl.domain.util.Resource.Failure
@@ -37,6 +35,7 @@ class IngredientDetailsViewModel @Inject constructor(
 
     private fun getIngredientDetails(id: Int, name: String) {
         viewModelScope.launch(dispatcher.io) {
+            ingredientDetailsViewState.postValue(IngredientDetailsViewState.Loading)
             getIngredientDetailsUseCase.execute(id).asFlow().zip(
                 getIngredientSubstitutesUseCase.execute(name).asFlow()
             ) { result1, result2 ->
@@ -48,8 +47,8 @@ class IngredientDetailsViewModel @Inject constructor(
                         ingredientDetailsViewState.postValue(
                             IngredientDetailsLoaded(
                                 result = mapToUiModel(
-                                    ingredientDetails = result1.result!! as IngredientDetails,
-                                    ingredientsSubstitutes = result2.result!! as IngredientSubstitutes
+                                    ingredientDetails = result1.result!!,
+                                    ingredientsSubstitutes = result2.result!!
                                 )
                             )
                         )

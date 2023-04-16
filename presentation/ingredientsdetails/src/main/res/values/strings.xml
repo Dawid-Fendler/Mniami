@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="amount_title">Amount:%s</string>
+    <string name="consistency_title">Consistency:%s</string>
+    <string name="estimate_title">Estimate Cost:\n%s</string>
+    <string name="ingredients_unit">Units\n%s</string>
+    <string name="substitutes_title">Substitutes:\n%s</string>
+    <string name="categories_title">Categories:\n%s</string>
+</resources>

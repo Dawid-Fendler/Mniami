@@ -10,14 +10,14 @@ fun mapToUiModel(
     ingredientDetails: IngredientDetails,
     ingredientsSubstitutes: IngredientSubstitutes
 ) = IngredientFullDetailsUiModel(
-    name = ingredientDetails.name,
-    possibleUnits = ingredientDetails.possibleUnits,
-    amount = ingredientDetails.amount,
-    estimateCost = ingredientDetails.estimateCost?.toUiModel(),
-    consistency = ingredientDetails.consistency,
-    image = ingredientDetails.image,
-    categoryPath = ingredientDetails.categoryPath,
-    substitutes = ingredientsSubstitutes.substitutes
+    name = ingredientDetails.name.orEmpty(),
+    possibleUnits = ingredientDetails.possibleUnits.orEmpty(),
+    amount = ingredientDetails.amount ?: 0.0,
+    estimateCost = ingredientDetails.estimateCost?.toUiModel() ?: EstimatedCostUiModel(0.0, ""),
+    consistency = ingredientDetails.consistency.orEmpty(),
+    image = ingredientDetails.image.orEmpty(),
+    categoryPath = ingredientDetails.categoryPath.orEmpty(),
+    substitutes = ingredientsSubstitutes.substitutes.orEmpty()
 )
 
 fun EstimatedCost.toUiModel() = EstimatedCostUiModel(
