@@ -5,11 +5,14 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import pl.data.datasource.ingredientdetails.IngredientsDetailsDataSource
+import pl.data.datasource.ingredientdetails.IngredientsDetailsRemoteDataSource
 import pl.data.datasource.recipedetails.RecipeDetailsDataSource
 import pl.data.datasource.recipedetails.RecipeDetailsRemoteDataSource
 import pl.data.datasource.recipes.RecipesDataSource
 import pl.data.datasource.recipes.RecipesRemoteDataSource
 import pl.data.repository.AuthRepositoryImpl
+import pl.data.service.IngredientsDetailsApi
 import pl.data.service.RecipeDetailsApi
 import pl.data.service.RecipesApi
 import pl.domain.repository.AuthRepository
@@ -37,4 +40,9 @@ object DataSourceModule {
     @Provides
     fun provideRecipeDetailsDataSource(api: RecipeDetailsApi): RecipeDetailsDataSource =
         RecipeDetailsRemoteDataSource(api)
+
+    @Singleton
+    @Provides
+    fun provideIngredientDetailsDataSource(api: IngredientsDetailsApi): IngredientsDetailsDataSource =
+        IngredientsDetailsRemoteDataSource(api)
 }

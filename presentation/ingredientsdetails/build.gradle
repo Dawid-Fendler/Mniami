@@ -7,8 +7,9 @@ plugins {
 }
 
 android {
-    namespace 'pl.presentation.ingredients'
+    namespace 'pl.presentation.ingredientsdetails'
     compileSdk 33
+
 
     buildFeatures {
         dataBinding true
@@ -22,7 +23,6 @@ dependencies {
     implementation project(':core:coroutines')
     implementation project(':data')
     implementation project(':domain')
-    implementation project(':presentation:ingredientsdetails')
 
     implementation libs.androidx.appcompat
     implementation libs.androidx.fragment

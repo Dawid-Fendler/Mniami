@@ -1,6 +1,11 @@
 package pl.domain.mapper
 
-import pl.domain.model.recipedetails.*
+import pl.domain.model.recipedetails.ExtendedIngredient
+import pl.domain.model.recipedetails.ExtendedIngredientUiModel
+import pl.domain.model.recipedetails.RecipeDetails
+import pl.domain.model.recipedetails.RecipeDetailsUiModel
+import pl.domain.model.recipedetails.WinePairing
+import pl.domain.model.recipedetails.WinePairingUiModel
 
 fun RecipeDetails.toUiModel() = RecipeDetailsUiModel(
     title = title,
@@ -56,5 +61,6 @@ private fun createDietTypesList(
 
 fun ExtendedIngredient.toUiModel() = ExtendedIngredientUiModel(
     id = id,
-    image = image
+    image = image,
+    name = name
 )

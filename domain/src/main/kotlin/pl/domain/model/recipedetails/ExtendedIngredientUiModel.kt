@@ -6,5 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class ExtendedIngredientUiModel(
     val id: Int,
-    val image: String
+    val image: String,
+    val name: String
 ) : Parcelable

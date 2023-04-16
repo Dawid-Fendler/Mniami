@@ -10,7 +10,9 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        navigateToDetails="@{ingredients.id}"
+        name="@{ingredients.name}"
+        image="@{ingredients.image}"
+        ingrId="@{ingredients.id}"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dp_16"

@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
 import pl.architecture.base.BaseFragment
 import pl.domain.model.recipedetails.ExtendedIngredientUiModel
 import pl.presentation.ingredients.R
 import pl.presentation.ingredients.databinding.FragmentIngredientsBinding
 
+@AndroidEntryPoint
 class IngredientsFragment :
     BaseFragment<FragmentIngredientsBinding>(R.layout.fragment_ingredients) {
 

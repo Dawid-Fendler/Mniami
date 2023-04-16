@@ -9,9 +9,17 @@
         android:id="@+id/ingredientsFragment"
         android:name="pl.ingredients.IngredientsFragment"
         android:label="IngredientsFragment"
-        tools:layout="@layout/fragment_ingredients" >
+        tools:layout="@layout/fragment_ingredients">
         <argument
             android:name="ingredients"
             app:argType="pl.domain.model.recipedetails.ExtendedIngredientUiModel[]" />
+        <action
+            android:id="@+id/action_ingredientsFragment_to_ingredient_details_graph"
+            app:destination="@id/ingredient_details_graph">
+            <argument
+                android:name="ingredientDetails"
+                app:argType="pl.domain.model.recipedetails.ExtendedIngredientUiModel" />
+        </action>
     </fragment>
+    <include app:graph="@navigation/ingredient_details_graph" />
 </navigation>
